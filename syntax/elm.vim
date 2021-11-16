@@ -44,6 +44,10 @@ syn match elmFloat "\(\<\d\+\.\d\+\>\)"
 syn match elmTopLevelDecl "^\s*[a-zA-Z][a-zA-z0-9_]*\('\)*\s\+:\(\r\n\|\r\|\n\|\s\)\+" contains=elmOperator
 syn match elmFuncName /^\l\w*/
 
+" GLSL
+syntax include @glsl syntax/glsl.vim
+syntax region pythonCode  start="[glsl|" keepend end="|]"  contains=@glsl
+
 " Folding
 syn region elmTopLevelTypedef start="type" end="\n\(\n\n\)\@=" contains=ALL fold
 syn region elmTopLevelFunction start="^[a-zA-Z].\+\n[a-zA-Z].\+=" end="^\(\n\+\)\@=" contains=ALL fold
