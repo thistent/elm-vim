@@ -46,7 +46,7 @@ syn match elmFuncName /^\l\w*/
 
 " GLSL
 syn include @glsl syntax/glsl.vim
-syn region glslCode matchgroup=glslDelimiters start="\[glsl|" end="|]"  contains=glsl
+syn region glslCode matchgroup=elmGlslDelimiters start="\<\[glsl|\>" end="\<|]\>"  contains=glsl
 
 " Folding
 syn region elmTopLevelTypedef start="type" end="\n\(\n\n\)\@=" contains=ALL fold
@@ -72,7 +72,7 @@ hi def link elmInt Number
 hi def link elmFloat Float
 hi def link elmDelimiter Delimiter
 hi def link elmBraces Delimiter
-hi def link glslDelimiters Delimiter
+hi def link elmGlslDelimiters Delimiter
 hi def link elmTypedef TypeDef
 hi def link elmImport Include
 hi def link elmConditional Conditional
