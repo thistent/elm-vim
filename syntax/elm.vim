@@ -46,7 +46,7 @@ syn match elmFuncName /^\l\w*/
 
 " GLSL
 syntax include @glsl syntax/glsl.vim
-syntax region glslCode  start="[glsl|" keepend end="|]"  contains=glsl
+syntax region glslCode  start="\[glsl|" end="|]"  contains=glsl
 
 " Folding
 syn region elmTopLevelTypedef start="type" end="\n\(\n\n\)\@=" contains=ALL fold
